@@ -2,7 +2,7 @@ const Twitter = require('../models/tweets')
 
 module.exports.list = (req, res) => {
     // console.log(req.params.id)
-    const name = req.params.id
+    const name = req.params.name
     Twitter.findOne({username: name})
         .then(user => {
             if(user) {
