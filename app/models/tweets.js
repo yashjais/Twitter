@@ -55,6 +55,7 @@ const twitterSchema = new Schema({
 
 // twitterSchema.methods.tweetsSave = function(username) {
 //     console.log('in the tweetsSave')
+//     put all the tokens in the .env file and also these are all expired
 //     const tweetssss = this
 //     const client = new Twitterr({
 //         consumer_key: '881flbXb16SbwdP3R2sRKvdji',
@@ -74,7 +75,7 @@ const twitterSchema = new Schema({
 // }
 
 
-twitterSchema.methods.tweetsSave = function(username) {
+twitterSchema.methods.tweetsSave = function (username) {
     // console.log('in the tweetsSave', username)
     const tweetssss = this
     const client = new Twitterr({
@@ -89,13 +90,13 @@ twitterSchema.methods.tweetsSave = function(username) {
             // console.log(tweetss, 'in the find of middleware')
             tweetssss.tweets.push(tweetss)
             return tweetssss.save()
-                    .then(function(tweets) {
-                        // console.log(tweets, 'one')
-                        return Promise.resolve(tweets)
-                    })
-                    .catch(function(err) {
-                        Promise.reject(err)
-                    })
+                .then(function (tweets) {
+                    // console.log(tweets, 'one')
+                    return Promise.resolve(tweets)
+                })
+                .catch(function (err) {
+                    Promise.reject(err)
+                })
         })
         .catch(err => res.send(err))
 }
@@ -107,6 +108,6 @@ module.exports = Twitter
 
 
 
- 
 
-  
+
+
